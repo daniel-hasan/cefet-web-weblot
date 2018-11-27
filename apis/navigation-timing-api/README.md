@@ -1,12 +1,12 @@
-#_Navigation Timing API_
+## _Navigation Timing API_
 
 Exemplo de uso da API de _Navigation Timing_ (tempo de navegação) do HTML5.
 
-##Links do Exemplo
+## Links do Exemplo
 - Link para seminário:
 - Link para exemplo publicado:
 
-##Cŕeditos
+## Cŕeditos
 
 Este trabalho foi realizado  em 2018/2 para a disciplina de Programação para Web do CEFET-MG no Campus II de Belo Horizonte
 
