@@ -2,6 +2,8 @@
 
 Exemplo de uso da API de _Navigation Timing_ (tempo de navegação) do HTML5.
 
+![](./apis/navigation-timing-api/images/screenshot.jpeg)
+
 ## Links do Exemplo
 - Link para seminário:
 - Link para exemplo publicado:
