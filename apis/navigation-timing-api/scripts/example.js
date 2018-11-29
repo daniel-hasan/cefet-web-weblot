@@ -13,9 +13,9 @@ let connectTime = performance.timing.responseEnd - performance.timing.requestSta
 //console.log("Tempo de carregamento da página: " + loadTime + "ms");
 console.log("Tempo de conexão: " + totalConnectionTime + "ms");
 
-let textConnectionTime = "Você está conectado a " + connectTime + " ms, mas há quanto carrega essa conexão?";
+let textConnectionTime = "Você está navegando tem " + connectTime + " ms, mas há quanto carrega essa conexão?";
 let textLoadTime = "Seu tempo de carregamento de conexão é de " + loadTime + " ms";
-let textConnected = "No entanto, seu tempo desde a primeira requisição foi de " + totalConnectionTime + " ms";
+let textConnected = "No entanto, seu tempo desde a primeira requisição foi de " + totalConnectionTime + " ms.";
 
 connectionTime.textContent = textConnectionTime;
 loadingTime.textContent = textLoadTime;
