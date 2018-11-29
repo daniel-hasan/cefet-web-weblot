@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="css/estilos.css">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>API Gamepad</title>
+	</head>
+	<body>
+		
+
+		<p id="demo">Por favor, conecte um gamepad.</p>
+		<p id="msg"></p>
+
+		<script>
+			var gamepad;
+			var animation = window.mozRequestAnimationFrame || window.requestAnimationFrame;
+			var start;
+			var x = 0;
+			var y = 0;
+			var tag = document.getElementById("demo");
+			var msg = document.getElementById("msg");
+
+			window.addEventListener("gamepadconnected", function(e) {
+					tag.innerHTML = "Gamepad connected at index " + e.gamepad.index + ":<br>" + e.gamepad.id + " and " + e.gamepad.buttons.length + " buttons. <p> Leve o Darth Vader na estrela da morte: <br><img src='images/vader.jpg' id='vader'></p><img src='images/death.jpg' id='death'>";
+	  			gamepad = e.gamepad;
+	  			gameLoop();
+	  		});
+			window.addEventListener("gamepaddisconnected", function(e) {
+	  			tag.innerHTML = e.gamepad.id + " Disconnected.<br>Por favor, conecte um gamepad.";
+			});
+
+
+			function buttonPressed(b) {
+			  if (typeof(b) == "object") {
+			    return b.pressed;
+			  }
+			  return b == 1.0;
+			}
+			
+			function gameLoop() {
+			  var vader = document.getElementById("vader");
+			  var death = document.getElementById("death");
+
+			  if (!gamepad)
+			    return;
+			  
+			  if(buttonPressed(gamepad.buttons[0])) {
+			  	msg.innerHTML = 'Pressionou quadrado';
+			  	x--;
+			  	vader.style.left = x*2 + "px";
+			  } else if (buttonPressed(gamepad.buttons[1])) {
+			  	msg.innerHTML = 'Pressionou X';
+			  	y++;
+			  	vader.style.top = y*2 + "px";
+			  } else if (buttonPressed(gamepad.buttons[2])) {
+			  	msg.innerHTML = 'Pressionou bola';
+			    x++;
+			  	vader.style.left = x*2 + "px";
+			  } else if(buttonPressed(gamepad.buttons[3])) {
+			  	msg.innerHTML = 'Pressionou triangulo';
+			  	y--;
+			  	vader.style.top = y*2 + "px";
+			  } else if(buttonPressed(gamepad.buttons[4])) {
+			  	msg.innerHTML = 'Pressionou L1';
+			    console.log(4)
+			  } else if(buttonPressed(gamepad.buttons[5])) {
+			    msg.innerHTML = 'Pressionou R1';
+			    console.log('pressed 5');
+			  } else if(buttonPressed(gamepad.buttons[6])) {
+			    msg.innerHTML = 'Pressionou L2';
+			    console.log('pressed 6');
+			  } else if(buttonPressed(gamepad.buttons[7])) {
+			    msg.innerHTML = 'Pressionou R2';
+			    console.log('pressed 7');
+			  } else if(buttonPressed(gamepad.buttons[8])) {
+			    msg.innerHTML = 'Pressionou share';
+			    console.log('pressed 8');
+			  } else if(buttonPressed(gamepad.buttons[9])) {
+			    msg.innerHTML = 'Pressionou options';
+			    console.log('pressed 9');
+			  } else if(buttonPressed(gamepad.buttons[10])) {
+			    msg.innerHTML = 'Pressionou L3';
+			    console.log('pressed 10');
+			  } else if(buttonPressed(gamepad.buttons[11])) {
+			    msg.innerHTML = 'Pressionou R3';
+			    console.log('pressed 11');
+			  } else if(buttonPressed(gamepad.buttons[12])) {
+			    msg.innerHTML = 'Pressionou home';
+			    console.log('pressed 12');
+			  } else if(buttonPressed(gamepad.buttons[13])) {
+			    msg.innerHTML = 'Pressionou touchpad';
+			  }
+			  var start = animation(gameLoop);
+			  
+			};
+
+		</script>
+	</body>
+
+</html>

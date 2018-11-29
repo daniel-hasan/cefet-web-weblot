@@ -1,0 +1,30 @@
+/*body{
+  background: url("../imagens/fundo.png");
+}*/
+form, p{
+  margin-left: 20px;
+  color: #FF530D;
+  font-family: "Times New Roman";
+  font-size: 28px;
+}
+button{
+  margin-left: 20px;
+  color: gray;
+  font-family: "Times New Roman";
+  font-size: 28px;
+}
+#tesouro{
+  height: 200px;
+  width: 200px;
+}
+#mapa{
+  height: 100px;
+  width: 100px;
+}
+
+#voltar{
+  margin-left: 5px;
+  color: #FF530D;
+  font-family: "Times New Roman";
+  font-size: 12px;
+}

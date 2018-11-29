@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="css/estilos.css">
+	    <title>API Gelocaliza&ccedil&atildeo - Ache o Tesouro</title>
+	</head>
+	<body>
+
+		<form name="myForm" action="javascript:checkSolution();" method="post">
+    		<div>
+        		<label for="solucao">Para liberar o tesouro desvende o enigma.
+        		<br>Solucione: 20*2+4/8*2-34?</label>
+        		<input type="text" id="solucao" />
+    		</div>
+    		<div class="button">
+        		<button type="submit">Solucionar</button>
+    		</div>
+		</form>
+		<p id="map"></p>
+		<p id="demo"></p>
+
+		<script>
+			var x = document.getElementById("demo");
+			var map = document.getElementById("map");
+
+
+			function checkSolution(argument) {
+				var x = document.forms["myForm"]["solucao"].value;
+				if (x==7){
+					map.innerHTML = "Clique <a href='geolocation_map.html'> aqui</a> para ver o mapa."
+					getLocation()
+				}
+				else{
+					alert("Infelizmente, você não foi capaz de desvendar o enigma.");
+				}
+			}
+			function getLocation() {
+			    if (navigator.geolocation) {
+			        navigator.geolocation.watchPosition(showPosition);
+			    } else { 
+			        x.innerHTML ="Gelocaliza&ccedil&atildeo não suportada";}
+			    }
+
+			function showPosition(position) {				
+			    var latlon = position.coords.latitude + "," + position.coords.longitude;
+
+
+			    var img_url = "https://maps.googleapis.com/maps/api/staticmap?center="+latlon+"&zoom=14&size=400x300&markers=color:blue%7Clabel:C%7C" + latlon + 
+			    "&key=AIzaSyABNkbg9j4NyacldfK9_TOVy3KdFEwvXbQ";
+
+			    var img_url_2 = "https://maps.googleapis.com/maps/api/staticmap?center="+latlon+"&zoom=18&size=400x300&maptype=satellite&markers=color:red%7C" + latlon + 
+			    "&key=AIzaSyABNkbg9j4NyacldfK9_TOVy3KdFEwvXbQ";
+
+			    var img_url_3 = "https://maps.googleapis.com/maps/api/staticmap?center="+latlon+"&zoom=14&size=600x300&maptype=hybrid&markers=color:green%7Clabel:S%7Csize:large%7C" + latlon + 
+			    "&key=AIzaSyABNkbg9j4NyacldfK9_TOVy3KdFEwvXbQ";
+
+			    var img_url_4 = "https://maps.googleapis.com/maps/api/staticmap?center="+latlon+"&zoom=17&size=600x300&maptype=hybrid&markers=color:purple%7Clabel:T%7Csize:large%7C" + latlon + 
+			    "&key=AIzaSyABNkbg9j4NyacldfK9_TOVy3KdFEwvXbQ";
+
+			    x.innerHTML = "<br><img src='images/tesouro.jpg' id='tesouro'><h1>Muito bem, achou o tesouro!</h1>" + "<br><img src='"+img_url+"'>" + "<br><img src='"+img_url_2+"'>" +  "<br><img src='"+img_url_3+"'>" +  "<br><img src='"+img_url_4+"'>" + "<br>Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude;
+			}
+
+		</script>
+
+	</body>
+</html>
