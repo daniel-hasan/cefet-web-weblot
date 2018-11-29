@@ -9,16 +9,16 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  max-width: 500px;
   margin: 2em auto;
   padding: 0 0.5em;
-  font-size: 18px;
+  font-size: 14px;
   font-family: cursive, sans-serif;
 }
 
 article {
   text-align: justify;
   color: white;
+  opacity: 0.8;
 }
 
 h1 {
@@ -41,9 +41,10 @@ h1 {
 }
 
 p {
-  margin:0 10px 10px;
+  margin: 0 10px 10px;
   text-align: justify;
   color: white;
+  padding-bottom: 10px;
 }
 
 a {
@@ -59,42 +60,42 @@ a {
   line-height: 1.4
 }
 
-#navigation ul{
-  margin: 15px 0;
-  padding: 0;
-  list-style-type: none;
+#container {
+  width: 700px;
+  margin: 0 auto
 }
 
-#navigation li{
-  margin-bottom: 5px;
-}
-
-
-#container{
-  width:700px;
-  margin:0 auto
-}
-
-#wrapper{
+#wrapper {
   float: left;
   width: 100%;
 }
 
-#content{
+#content {
   margin: 0 150px;
   color: white;
 }
 
 #extra {
   background-color: black;
-  opacity: 0.4;
-  filter: alpha(opacity=100); /* For IE8 and earlier */
- }
+  background: rgb(0, 0, 0); /* Fallback for older browsers without RGBA-support */
+  background: rgba(0, 0, 0, 0.5);
+  text-align: justify;
+  font-style: bold;
+  margin: 0 150px;
+}
 
-#navigation{
+#navigation {
   float: left;
   width: 150px;
   margin-left: -150px
 }
 
+#navigation li {
+  margin-bottom: 5px;
+}
 
+#navigation ul {
+  margin: 15px 0;
+  padding: 0;
+  list-style-type: none;
+}
