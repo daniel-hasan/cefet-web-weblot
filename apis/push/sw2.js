@@ -62,7 +62,8 @@ self.addEventListener('notificationclick', function(event) {
   event.notification.close();
 
   event.waitUntil(
-    clients.openWindow('https://developers.google.com/web/')
+    clients.openWindow('https://lucashuati.github.io/cefet-web-weblot/apis/navigation-timing-api/index.html')
+    // clients.openWindow('https://www.apple.com/br')
   );
 });
 
