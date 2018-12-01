@@ -1,0 +1,101 @@
+{
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url("../images/escher.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  margin: 2em auto;
+  padding: 0 0.5em;
+  font-size: 14px;
+  font-family: cursive, sans-serif;
+}
+
+article {
+  text-align: justify;
+  color: white;
+  opacity: 0.8;
+}
+
+h1 {
+  text-align: center;
+  color: white;
+  font-size: 30px;
+}
+
+.hidden {
+  display: none;
+}
+
+.value {
+  font-weight: bold;
+}
+
+.author {
+  display: block;
+  margin-top: 1em;
+}
+
+p {
+  margin: 0 10px 10px;
+  text-align: justify;
+  color: white;
+  padding-bottom: 10px;
+}
+
+a {
+  padding: 5px;
+}
+
+
+#container {
+  text-align: left;
+}
+
+#content p{
+  line-height: 1.4
+}
+
+#container {
+  width: 700px;
+  margin: 0 auto
+}
+
+#wrapper {
+  float: left;
+  width: 100%;
+}
+
+#content {
+  margin: 0 150px;
+  color: white;
+}
+
+#extra {
+  background-color: black;
+  background: rgb(0, 0, 0); /* Fallback for older browsers without RGBA-support */
+  background: rgba(0, 0, 0, 0.5);
+  text-align: justify;
+  font-style: bold;
+  margin: 0 150px;
+}
+
+#navigation {
+  float: left;
+  width: 150px;
+  margin-left: -150px
+}
+
+#navigation li {
+  margin-bottom: 5px;
+}
+
+#navigation ul {
+  margin: 15px 0;
+  padding: 0;
+  list-style-type: none;
+}
